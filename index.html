@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello World</h1>
+  
+  <button onclick="forword()">Forward</button>
+  <button onclick="backword()">Backword</button>
+
+
+  <P id="demo"></P><br>
+
+
+  <script>
+
+      const room = ["hall", "woonkamer", "kueken", "slaapkamer", "badkamer", "zolder","duurkamer"];
+      let rLen = room.length;
+
+      
+      const monster = ["draak", "trol", "vampier", "kaboeter", "schoonmoeder", "opa",""];
+      let mLen = monster.length;
+
+         
+      const item = ["", "", "", "key", "", "",""];
+      let pLen = item.length;
+      var index = 0;
+
+      document.getElementById('demo').innerHTML = room[index] + "<br>" + monster[index] + "<br>" + item[index];
+
+      function forword() {
+      if (index < 6) {
+        index++;}
+        else {
+         alert ("niet zo ver!");
+        }
+        document.getElementById('demo').innerHTML = room[index] + "<br>" + monster[index]+ "<br>" + item[index];
+        if (index == [4]){  
+
+
+        }
+      }
+
+      function backword() {
+          if (index > 0) {
+        index--;}
+        else {
+         alert ("Er zijn gaan kamers meer!");
+        }
+        document.getElementById('demo').innerHTML = room[index] + "<br>" + monster[index]+ "<br>" + item[index];
+      }
+  </script>
+
+
+</body>
+</html>
