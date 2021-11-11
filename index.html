@@ -11,22 +11,29 @@
   
   <button onclick="forword()">Forward</button>
   <button onclick="backword()">Backword</button>
+  
+  <button style="display:none" onclick="pak()" id="pak">pak</button> 
+  <button style="display:none" onclick="pak2()" id="pak2">pak2</button>
+
+  <h1 id=info style="border: solid 5px; display: none;">key</h1>
 
 
   <P id="demo"></P><br>
 
 
   <script>
+    var benhier = false;
 
-      const room = ["hall", "woonkamer", "kueken", "slaapkamer", "badkamer", "zolder","duurkamer"];
+
+      var room = ["hall", "woonkamer", "kueken", "slaapkamer", "badkamer", "zolder","duurkamer"];
       let rLen = room.length;
 
       
-      const monster = ["draak", "trol", "vampier", "kaboeter", "schoonmoeder", "opa",""];
+      var monster = ["draak", "trol", "vampier", "kaboeter", "schoonmoeder", "opa",""];
       let mLen = monster.length;
 
          
-      const item = ["", "", "", "key", "", "",""];
+      var item = ["", "", "", "key", "", "",""];
       let pLen = item.length;
       var index = 0;
 
@@ -39,11 +46,12 @@
          alert ("niet zo ver!");
         }
         document.getElementById('demo').innerHTML = room[index] + "<br>" + monster[index]+ "<br>" + item[index];
-        if (index == [4]){  
+        if (index == [3] && benhier == false){ document.getElementById('pak').style.display = "block";}
+        else {document.getElementById('pak').style.display = "none";}
 
-
+        if (index == [6]){ document.getElementById('pak2').style.display = "block";}
+        else {document.getElementById('pak2').style.display = "none";}
         }
-      }
 
       function backword() {
           if (index > 0) {
@@ -52,6 +60,18 @@
          alert ("Er zijn gaan kamers meer!");
         }
         document.getElementById('demo').innerHTML = room[index] + "<br>" + monster[index]+ "<br>" + item[index];
+        ducument.getElementById('pak').style.display = "none";
+       item
+        }
+    
+
+      function pak(){
+        benhier = true;
+        (document.getElementById('pak').style.display = "none");
+        item[3] = "";
+        document.getElementById('demo').innerHTML = room[index] + "<br>" + monster[index];
+        (document.getElementById('info').style.display = "block");
+        alert ("Je hebt een sleutel gevonden!");
       }
   </script>
 
